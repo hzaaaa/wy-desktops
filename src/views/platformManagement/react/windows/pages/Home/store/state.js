@@ -76,10 +76,10 @@ export default fromJS({
     // {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/file/0',isIframe:true,isBlank:false,sort:3},
     // {name:'消息管理',type:'message',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/news.png',isShow:true,url:'/win/message',isIframe:true,isBlank:false,sort:3},
     // {name:'云盘',type:'cloud',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/cloudpan.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:4},
-    {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:1},
-    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'http://172.16.1.44:9057/#/login',isIframe:true,isBlank:false,sort:2},
-    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:3},
-    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:4},
+    {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
+    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
+    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
+    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
     // {name:'github',type:'github',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/github.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:true,sort:5},
     // {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6},
   ],
@@ -90,62 +90,62 @@ export default fromJS({
   },
   openWindowList: [],  //已打开的应用
   startBoxLeftApps:[  //开始菜单左侧应用列表
-    {
-      lab:'A',
-      list:[
-        {name:'Adobe',type:'Adobe',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:null,isIframe:true,isBlank:false,sort:0,children:[{name:'系统管理',type:'system',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/system_control.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:1},{name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2}]}
-      ]
-    },
-    {
-      lab:'B',
-      list:[
-        {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2,children:null},
-        {name:'捕鱼达人',type:'fish',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fish.png',isShow:true,url:'http://game.qqxio.cn/fish',isIframe:true,isBlank:false,sort:8,children:null},
-      ]
-    },
-    {
-      lab:'B',
-      list:[
-        {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2,children:null},
-      ]
-    },
-    {
-      lab:'G',
-      list:[
-        {name:'github',type:'github',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/github.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:true,sort:5,children:null},
-      ]
-    },
-    {
-      lab:'S',
-      list:[
-        {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6,children:null},
-        {name:'水果忍者',type:'fruit_ninja',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fruit_ninja.png',isShow:true,url:'http://game.qqxio.cn/fruit_ninja',isIframe:true,isBlank:false,sort:7,children:null},
-      ]
-    },
-    {
-      lab:'T',
-      list:[
-        {name:'太空战机',type:'fly',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fly.png',isShow:true,url:'http://game.qqxio.cn/fly',isIframe:true,isBlank:false,style:{width:622,height:467},sort:9,children:null}
-      ]
-    },
-    {
-      lab:'W',
-      list:[
-        {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:3,children:null},
-      ]
-    },
-    {
-      lab:'X',
-      list:[
-        {name:'系统管理',type:'system',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/system_control.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:1,children:null},
-      ]
-    },
-    {
-      lab:'Y',
-      list:[
-        {name:'云盘',type:'cloud',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/cloudpan.png',isShow:true,url:'http://cloud.qqxio.cn',isIframe:true,isBlank:false,sort:4,children:null},
-      ]
-    },
+    // {
+    //   lab:'A',
+    //   list:[
+    //     {name:'Adobe',type:'Adobe',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:null,isIframe:true,isBlank:false,sort:0,children:[{name:'系统管理',type:'system',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/system_control.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:1},{name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2}]}
+    //   ]
+    // },
+    // {
+    //   lab:'B',
+    //   list:[
+    //     {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2,children:null},
+    //     {name:'捕鱼达人',type:'fish',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fish.png',isShow:true,url:'http://game.qqxio.cn/fish',isIframe:true,isBlank:false,sort:8,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'B',
+    //   list:[
+    //     {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'G',
+    //   list:[
+    //     {name:'github',type:'github',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/github.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:true,sort:5,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'S',
+    //   list:[
+    //     {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6,children:null},
+    //     {name:'水果忍者',type:'fruit_ninja',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fruit_ninja.png',isShow:true,url:'http://game.qqxio.cn/fruit_ninja',isIframe:true,isBlank:false,sort:7,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'T',
+    //   list:[
+    //     {name:'太空战机',type:'fly',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fly.png',isShow:true,url:'http://game.qqxio.cn/fly',isIframe:true,isBlank:false,style:{width:622,height:467},sort:9,children:null}
+    //   ]
+    // },
+    // {
+    //   lab:'W',
+    //   list:[
+    //     {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:3,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'X',
+    //   list:[
+    //     {name:'系统管理',type:'system',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/system_control.png',isShow:true,url:'/win/system',isIframe:true,isBlank:false,sort:1,children:null},
+    //   ]
+    // },
+    // {
+    //   lab:'Y',
+    //   list:[
+    //     {name:'云盘',type:'cloud',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/cloudpan.png',isShow:true,url:'http://cloud.qqxio.cn',isIframe:true,isBlank:false,sort:4,children:null},
+    //   ]
+    // },
   ],
   startBoxRightApps:[ //开始菜单右侧应用
     {name:'标题',type:'app1',img:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/application/wangyi.jpg',colSpan:6,sort:1},
