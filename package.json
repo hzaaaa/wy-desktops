@@ -1,0 +1,53 @@
+{
+  "name": "data-base-platform",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.16.7",
+    "@alifd/theme-2786": "^0.1.14",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "axios": "^1.4.0",
+    "codemirror": "^5.65.14",
+    "element-plus": "^2.3.3",
+    "js-cookie": "^3.0.5",
+    "jsencrypt": "^3.3.2",
+    "ljtools": "^1.0.12",
+    "moment": "^2.29.4",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.34",
+    "pinia-plugin-persistedstate": "^3.1.0",
+    "react-desktop": "^0.3.7",
+    "vue": "^3.3.4",
+    "vue-json-pretty": "^2.2.4",
+    "vue-router": "^4.1.6",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
+    "@types/node": "^20.4.5",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^5.1.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-transition-group": "^2.5.0",
+    "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.62.0",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.15.2",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.4.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vue-tsc": "^1.8.5"
+  }
+}

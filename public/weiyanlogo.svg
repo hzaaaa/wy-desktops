@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.283" y1="0.638" x2="0.654" y2="0.167" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0080a0"/>
+      <stop offset="1" stop-color="#45b4ae"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.009" y1="0.478" x2="1.174" y2="0.528" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e04738"/>
+      <stop offset="0.1" stop-color="#e36034"/>
+      <stop offset="0.24" stop-color="#e77c2f"/>
+      <stop offset="0.391" stop-color="#ea932c"/>
+      <stop offset="0.554" stop-color="#eda229"/>
+      <stop offset="0.741" stop-color="#eeac28"/>
+      <stop offset="1" stop-color="#efaf28"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.219" y1="0.733" x2="0.628" y2="0.193" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="0.061" y1="-0.192" x2="1.118" y2="0.942" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#32a0a7"/>
+      <stop offset="1" stop-color="#94ca9c"/>
+    </linearGradient>
+  </defs>
+  <g id="_32" data-name="32" transform="translate(-247 -14)">
+    <rect id="矩形_420" data-name="矩形 420" width="32" height="32" transform="translate(247 14)" fill="#5a1c1c" opacity="0"/>
+    <g id="组_818" data-name="组 818" transform="translate(62.494 -1226.858)">
+      <path id="路径_1169" data-name="路径 1169" d="M555.222,156.154l-.244-.142-2.259-4.23,7.3-11.492h5.294Z" transform="translate(-349.571 1108.568)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="路径_1170" data-name="路径 1170" d="M543.618,158.993,548,167.2l-2.608,4.2-.294-.006-4.515-8.217Z" transform="translate(-339.717 1093.38)" fill-rule="evenodd" fill="url(#linear-gradient-2)"/>
+      <path id="路径_1171" data-name="路径 1171" d="M509.945,156.154l-.243-.142-2.267-4.23,7.278-11.492h5.294Z" transform="translate(-312.796 1108.568)" fill-rule="evenodd" fill="url(#linear-gradient-3)"/>
+      <path id="路径_1172" data-name="路径 1172" d="M468.881,151.933l-2.584,4.131a.207.207,0,0,1-.367.055h0l-6.459-12q-.128-.265-.279-.518l-.092-.171-.021-.011a6.816,6.816,0,0,0-5.571-3.128h9.2l0,0h.006Z" transform="translate(-269 1108.568)" fill-rule="evenodd" fill="url(#linear-gradient-4)"/>
+    </g>
+  </g>
+</svg>
