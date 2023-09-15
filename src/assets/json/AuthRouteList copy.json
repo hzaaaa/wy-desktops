@@ -1,0 +1,67 @@
+{
+  "code": 200,
+  "data": [
+    
+    {
+      
+
+      "path": "/platformManagement",
+      "name": "platformManagement",
+      
+      "component": "/platformManagement/home",
+      "meta": {
+        "icon": "icon-xitong",
+        "title": "系统平台",
+        "isHide": false,
+        "isKeepAlive": true
+      }
+      
+      
+    },
+    {
+      "path": "/sysManagement",
+      "name": "Sys",
+      "redirect": "/sysManagement/backgroundAccountManagement/index",
+      "meta": {
+        "icon": "icon-xitong",
+        "title": "后台管理",
+        "isKeepAlive": false
+      },
+      "children": [
+        {
+          "path": "/sysManagement/backgroundAccountManagement/index",
+          "name": "Account",
+          "component": "/sysManagement/backgroundAccountManagement/index",
+          "meta": {
+            "title": "用户管理",
+            "isKeepAlive": true,
+            "isHide": false
+          }
+        },
+        
+        {
+          "path": "/sysManagement/rolePermissionManagement/index",
+          "name": "RolePermission",
+          "component": "/sysManagement/rolePermissionManagement/index",
+          "meta": {
+            "title": "角色权限",
+            "isKeepAlive": true,
+            "isHide": false
+          }
+        },
+        {
+          "path": "/sysManagement/logManagement/index",
+          "name": "logManagement",
+          "component": "/sysManagement/logManagement/index",
+          "meta": {
+            "title": "日志审计",
+            "isKeepAlive": true,
+            "isHide": false
+          }
+        }
+      ]
+    }
+    
+  ],
+  "msg": "成功"
+}

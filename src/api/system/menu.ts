@@ -52,6 +52,12 @@ export const getMenuTreeApi = (params?: any) => {
 export const getMenuIdApi = (params?: any) => {
   return http.get<any>(PORTAuth + `/menu/id`, params);
 };
+/**
+ * @name 菜单list
+ */
+export const getMenuListApi = (params?: any) => {
+  return http.get<any>(PORTAuth + `/menu/list `, params);
+};
 
 /**
  * @name 获取当前用户所能查看的权限树

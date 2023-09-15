@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Tree} from "@alifd/next/lib/index";
-import {NavLink} from "react-router-dom"
+// import {NavLink} from "react-router-dom"
 import {menuLogo} from "../../../public/utils/com";
 
 const TreeNode = Tree.Node
@@ -30,7 +30,7 @@ class TreeMenu extends Component {
       }else{
         return (
           <TreeNode
-            label={<NavLink to={match.path+row.url}>{menuLogo(row.logo)}<span>{row.title}</span></NavLink>}
+            // label={<NavLink to={match.path+row.url}>{menuLogo(row.logo)}<span>{row.title}</span></NavLink>}
             key={row.type}
             isLeaf
           />

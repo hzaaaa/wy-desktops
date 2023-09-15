@@ -51,6 +51,9 @@ import { defineAsyncComponent, ref } from "vue";
 import { pwdChangeApi } from "@/api/system/user";
 import { ElMessage } from "element-plus";
 
+defineOptions({
+	name: "basicInfo",
+});
 // 引入组件
 const PasswordDialog = defineAsyncComponent(() => import("./editPassword.vue"));
 

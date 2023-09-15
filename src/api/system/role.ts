@@ -31,6 +31,13 @@ export const getLogListApi = (params: any) => {
   
 };
 /**
+ * @name   登录日志接口 子系统
+ */
+export const addLogApi = (params: any) => {
+  return http.post<any>(PORTAuth + `/log/login/add `, params);
+  
+};
+/**
  * @name  删除角色
  */
 export const deleteRoleApi = (params: any) => {

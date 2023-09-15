@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Breadcrumb } from '@alifd/next'
-import {  Link } from 'react-router-dom'
+// import {  Link } from 'react-router-dom'
 
 import "../../public/style/components/content/content_right.scss"
 
@@ -31,7 +31,7 @@ class ContentRight extends Component {
     } = this.props
     return (
       <div className={"content_right "+className}>
-        {isFile ?
+        {/* {isFile ?
             this.fileBreadcrumbItem()
           :
           <Breadcrumb>
@@ -41,7 +41,7 @@ class ContentRight extends Component {
             ))}
 
           </Breadcrumb>
-        }
+        } */}
         <div className={"content_right_main "+className+"_content"}>
           {this.props.children}
         </div>

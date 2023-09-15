@@ -47,7 +47,7 @@
       </el-table-column>
       <el-table-column label="操作" width="230" header-align="center" align="center">
         <template #default="scope">
-          <div v-if="scope.row.name === '超级管理员'" :disabled="scope.row.name === '超级管理员'" class="authority_text">
+          <div v-if="scope.row.name === 'admin1'" :disabled="scope.row.id === 18" class="authority_text">
             拥有最高权限，不允许修改
           </div>
           <el-button v-else size="small" text type="primary" @click="onEditDrawer(scope.row)">编辑</el-button>
@@ -72,11 +72,14 @@ import type { ElTable } from "element-plus";
 import { Search, Plus } from "@element-plus/icons-vue";
 import { getRoleListApi, deleteRoleApi } from "@/api/system/role";
 
+
 import useListPageHook from "@/hooks/listPage";
 
 import { ElMessage, ElMessageBox } from "element-plus";
 
-
+defineOptions({
+	name: "rolePermissionManagement",
+});
 const editDialog = defineAsyncComponent(() => import("@/views/sysManagement/rolePermissionManagement/editDialog.vue"));
 
 const deleteClick = async (row: any) => {

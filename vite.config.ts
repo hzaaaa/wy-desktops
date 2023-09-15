@@ -7,7 +7,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import vueJsx from '@vitejs/plugin-vue-jsx'
-
+import fs from "fs";
 // @see: https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   // 各个 .env 文件中自定义的环境参数合并后的对象
@@ -33,6 +33,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       // 服务器主机名，如果允许外部访问，可设置为 "0.0.0.0"
       host: "0.0.0.0",
+      https:{
+        cert: fs.readFileSync("keys/cert.crt"),
+        key: fs.readFileSync("keys/cert.key"),
+      },
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
       proxy: {

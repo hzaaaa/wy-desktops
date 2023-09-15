@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import store from './store/index'
 import { Provider } from 'react-redux'
-import {  Route, Switch } from 'react-router-dom'
+// import {  Route, Switch } from 'react-router-dom'
 import { closeContextMenu } from "./common/rightMenu"
 import "../public/style/windows/index.scss"
 

@@ -132,7 +132,7 @@ class StartBoxWindows extends Component {
             <div className="start_box_left_user">
               <div className="start_box_left_info">
                 <img src="/logo/default_header.jpg" alt="header_img" onClick={()=>{setWindowOpenList({
-                  name:'基本信息',type:'baseinfo',logo:'/logo/default_header.jpg',isShow:true,url:'/baseinfo',isIframe:true,isBlank:false
+                  name:'基本信息',type:'baseinfo',logo:'/logo/default_header.jpg',isShow:true,url:'/#/baseinfo',isIframe:true,isBlank:false
                 },openWindowList);closeStartBox()}}/>
                 {/* <div class="avatar">{ userStore?.userInfo?.sysUser?.username?.slice(0, 1).toUpperCase()}</div> */}
                 <h3>{userStore?.userInfo?.sysUser?.username}</h3>

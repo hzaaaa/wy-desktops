@@ -51,6 +51,9 @@ import useListPageHook from "@/hooks/listPage";
 
 import { ElMessage, ElMessageBox } from "element-plus";
 
+defineOptions({
+	name: "logManagement",
+});
 const queryFormRaw = {
 	name: "",
 	enabled: null,

@@ -1,6 +1,6 @@
 import React from 'react'
 import Windows from "./windows/index"
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+// import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Portal from "./Portal"
 // import Mac from "./mac/indexLoadable"

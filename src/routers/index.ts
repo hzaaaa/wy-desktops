@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory,createWebHashHistory } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 import { useUserStore } from "@/stores/user";
 import { staticRoutes, errorRoutes } from "@/routers/route";
@@ -6,7 +6,8 @@ import { initDynamicRoutes } from "@/routers/backEnd";
 import abortController from "@/api/abort";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
+  // history: createWebHistory(),
   routes: [...staticRoutes, ...errorRoutes],
 });
 
@@ -32,7 +33,7 @@ router.beforeEach(async (to, from, next) => {
   }
   
   // 2. 判断是否有 token，没有则重定向到登录页
-  if (!userStore.token) return next({ path: "/login", replace: true });
+  if (!userStore.token) return next({ path: "/login", replace: true });//temp test
   
   // 3. 如果没有菜单列表，重新请求菜单列表并添加动态路由（手动刷新、输入地址跳转时）
   

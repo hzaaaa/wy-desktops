@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { View } from 'react-desktop'
-import {  Route, Switch, Redirect } from 'react-router-dom'
+// import {  Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 import { actionCreators as actionCreatorsHome } from "../Home/store";
 
@@ -26,7 +26,7 @@ class Index extends Component {
     } = this.props
     return (
       <div className='system_control'>
-        <LeftnavRightContent>
+        {/* <LeftnavRightContent>
           <nav>
             <View height='100%' style={{overflow:'auto'}}>
               <TreeMenu match={match} menu={LeftMenu} defaultSelectedKeys='desk_manage'/>
@@ -45,7 +45,7 @@ class Index extends Component {
               <Route path={`${match.path}/desktop_app_manage`} exact component={DesktopAppManage}/>
             </Switch>
           </main>
-        </LeftnavRightContent>
+        </LeftnavRightContent> */}
       </div>
     )
   }

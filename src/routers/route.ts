@@ -9,7 +9,7 @@ import { RouteRecordRaw } from "vue-router";
 export const staticRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/sysManagement/backgroundAccountManagement/index",
+    redirect: "/platformManagement",
   },
   {
     path: "/login",
@@ -17,6 +17,14 @@ export const staticRoutes: Array<RouteRecordRaw> = [
     component: () => import("@/views/login/index.vue"),
     meta: {
       title: "登录",
+    },
+  },
+  {
+    path: "/platformManagement",
+    name: "platformManagement",
+    component: () => import("@/views/platformManagement/home.vue"),
+    meta: {
+      title: "平台",
     },
   },
   {

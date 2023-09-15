@@ -48,6 +48,9 @@
 
 <script setup lang="ts">
 import LoginForm from "./components/LoginForm.vue";
+defineOptions({
+	name: "login",
+});
 </script>
 
 <style lang="scss" scoped>

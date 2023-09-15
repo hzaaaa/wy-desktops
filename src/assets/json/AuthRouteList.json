@@ -2,22 +2,7 @@
   "code": 200,
   "data": [
     
-    {
-      
-
-      "path": "/platformManagement",
-      "name": "platformManagement",
-      
-      "component": "/platformManagement/home",
-      "meta": {
-        "icon": "icon-xitong",
-        "title": "系统平台",
-        "isHide": false,
-        "isKeepAlive": true
-      }
-      
-      
-    },
+    
     {
       "path": "/sysManagement",
       "name": "Sys",

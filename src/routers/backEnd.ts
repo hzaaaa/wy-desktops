@@ -7,7 +7,7 @@ import { ElMessage } from "element-plus";
 /**
  * 引入 views 目录下所有 .vue 文件
  */
-const viewsModules = import.meta.glob("@/views/**/*.vue");
+const viewsModules = import.meta.glob("@/views/**/*.{vue,jsx}");
 
 /**
  * 初始化动态路由，解决刷新时路由丢失问题
@@ -34,6 +34,7 @@ export const initDynamicRoutes = async () => {
     authStore.flatRouteListGet.forEach((item: any) => {
       item.children && delete item.children;
       if (item.component && isString(item.component)) {
+        console.log('item.component',item.component)
         item.component = viewsModules[`/src/views${item.component}.vue`];
       }
       // debugger

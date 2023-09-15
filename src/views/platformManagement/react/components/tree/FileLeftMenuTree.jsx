@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {  NavLink } from 'react-router-dom'
+// import {  NavLink } from 'react-router-dom'
 import { View } from 'react-desktop'
 import { Tree } from '@alifd/next'
 import {setTreeData} from "../../public/utils/com";
@@ -17,7 +17,7 @@ class FileLeftMenuTree extends Component {
     const listTree = setTreeData(menuList.list)
     return (
       <View height='100%' style={{overflow:'auto'}}>
-        <Tree defaultExpandAll defaultSelectedKeys={['desk_manage']} style={{ width: '100%' }}>
+        {/* <Tree defaultExpandAll defaultSelectedKeys={['desk_manage']} style={{ width: '100%' }}>
           <TreeNode
             label={
               <NavLink to={match.path+'/0'}>
@@ -32,7 +32,7 @@ class FileLeftMenuTree extends Component {
           >
             {this.tree(listTree)}
           </TreeNode>
-        </Tree>
+        </Tree> */}
       </View>
     )
   }

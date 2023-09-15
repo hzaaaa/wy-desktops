@@ -1,5 +1,25 @@
 import { fromJS } from 'immutable'
+let allPlatInfoList=[
+  {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
+    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
+    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
+    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
+]
+let showPlatInfoList = [];
+let UserStore = JSON.parse( localStorage.getItem('UserStore'));
+let menuVoList = UserStore.userInfo.menuVoList;
+for(let i =0;i<menuVoList.length;i++){
+  let menuItem = menuVoList[i];
 
+  for(let j=0;j<allPlatInfoList.length;j++){
+    let platItem = allPlatInfoList[j];
+
+    if(menuItem.title===platItem.name){
+      showPlatInfoList.push(platItem);
+      break;
+    }
+  }
+}
 export default fromJS({
   dataTime:{  //时间显示
     year:'0000',
@@ -66,20 +86,21 @@ export default fromJS({
   },
   background:{  //桌面背景
     type:'image',
-    value:'/logo/bigBg.jpg'
+    value:'/logo/bigBg.png'
   },
   isOpenMessageBox:false,//是否打开消息框
   isOpenStartBox:false,//是否打开开始菜单
   desktopApps:[ //桌面应用图标  isBlank是否在新标签页中打开
-    {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isShow:true,url:'/sysManagement/backgroundAccountManagement/index',isIframe:true,isBlank:false,sort:1},
+    {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isShow:true,url:'/#/sysManagement/backgroundAccountManagement/index',isIframe:true,isBlank:false,sort:1},
     // {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2},
     // {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/file/0',isIframe:true,isBlank:false,sort:3},
     // {name:'消息管理',type:'message',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/news.png',isShow:true,url:'/win/message',isIframe:true,isBlank:false,sort:3},
     // {name:'云盘',type:'cloud',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/cloudpan.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:4},
-    {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
-    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
-    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
-    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
+    // {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
+    // {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
+    // {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
+    // {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
+    ...showPlatInfoList,
     // {name:'github',type:'github',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/github.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:true,sort:5},
     // {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6},
   ],

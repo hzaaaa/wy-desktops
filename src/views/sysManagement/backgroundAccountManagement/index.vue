@@ -122,6 +122,9 @@ import {
 } from "@/api/system/user";
 import { ElMessage, ElMessageBox } from "element-plus";
 
+defineOptions({
+	name: "backgroundAccountManagement",
+});
 // 账户新建编辑抽屉
 const drawerRef = ref<InstanceType<typeof AccountDrawer> | null>(null);
 const openDrawer = (title: string, row: any = {}) => {

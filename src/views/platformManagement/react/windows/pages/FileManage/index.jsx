@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {  Route, Switch } from 'react-router-dom'
+// import {  Route, Switch } from 'react-router-dom'
 import { View } from 'react-desktop'
 // import {actionCreators} from "./store";
 
@@ -28,9 +28,9 @@ class index extends Component {
             />
           </nav>
           <main>
-            <Switch>
+            {/* <Switch>
               <Route path={`${match.path}/:id`} render={(route)=>(<FileContent history={history} match={route.match} match_old={match}/>)} />
-            </Switch>
+            </Switch> */}
           </main>
         </LeftnavRightContent>
       </View>
