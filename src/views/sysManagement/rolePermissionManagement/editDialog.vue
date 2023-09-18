@@ -92,14 +92,24 @@ const rules = reactive({
 	name: [{ required: true, validator: validateRoleName, message: "请输入角色名称", trigger: "blur" }],
 });
 const platformAllList = <any>ref([]);
-getMenuListApi().then((res: any) => {
-	console.log("getMenuListApi", res);
-	let allList = res.data || [];
-	platformAllList.value = allList.filter((item: any) => {
+// getMenuListApi().then((res: any) => {
+// 	console.log("getMenuListApi", res);
+// 	let allList = res.data || [];
+// 	platformAllList.value = allList.filter((item: any) => {
+// 		return item.type === 7;
+// 	});
+// 	console.log("platformAllList.value", platformAllList.value);
+// });
+const getplatformAllList =()=>{
+	let UserStore = <any>JSON.parse(<any>localStorage.getItem("UserStore"));
+	let menuVoList = UserStore.userInfo.menuVoList;
+	let type7Array = menuVoList.filter((item: any) => {
 		return item.type === 7;
 	});
-	console.log("platformAllList.value", platformAllList.value);
-});
+	platformAllList.value= type7Array
+	console.log('type7Array',type7Array);
+}
+getplatformAllList();
 // 菜单节点初始化
 const menuTree = ref<any[]>([]);
 const defaultProps = {
@@ -197,7 +207,7 @@ const onSave = async (formEl: FormInstance | undefined) => {
 	}
 	// emit('onSave', '111');
 };
-let rawTree2Array = <any>[];
+let rawTree2Array = <any>[ 31 ];//修改密码的权限
 let openCallBack = async () => {
 	await nextTick();
 	// debugger
@@ -208,9 +218,9 @@ let openCallBack = async () => {
 		let typeNot7Array = menuVoList.filter((item: any) => {
 			return item.type !== 7;
 		});
-		rawTree2Array = [];
-		getRawTree2Array(typeNot7Array);
-		console.log("rawTree2Array", rawTree2Array);
+		// rawTree2Array = [];
+		// getRawTree2Array(typeNot7Array);
+		// console.log("rawTree2Array", rawTree2Array);
 	} else {
 		//修改
 
@@ -226,9 +236,9 @@ let openCallBack = async () => {
 			let typeNot7Array = res.data.simpleMenuVoList.filter((item: any) => {
 				return item.type !== 7;
 			});
-			rawTree2Array = [];
-			getRawTree2Array(typeNot7Array);
-			console.log("rawTree2Array", rawTree2Array);
+			// rawTree2Array = [];
+			// getRawTree2Array(typeNot7Array);
+			// console.log("rawTree2Array", rawTree2Array);
 		});
 	}
 };

@@ -31,7 +31,9 @@ const logoutClick = () => {
       location.reload();
       ElMessage.success("退出登录成功！");
     })
-    .catch(() => {});
+    .catch((e) => {
+      ElMessage.error(e)
+    });
 };
 
 const{ Row,Col } = Grid

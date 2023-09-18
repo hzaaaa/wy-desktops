@@ -33,10 +33,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       // 服务器主机名，如果允许外部访问，可设置为 "0.0.0.0"
       host: "0.0.0.0",
-      https:{
-        cert: fs.readFileSync("keys/cert.crt"),
-        key: fs.readFileSync("keys/cert.key"),
-      },
+      // https:{
+      //   cert: fs.readFileSync("keys/cert.crt"),
+      //   key: fs.readFileSync("keys/cert.key"),
+      // },
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
       proxy: {

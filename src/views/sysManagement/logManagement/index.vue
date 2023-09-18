@@ -16,7 +16,7 @@
 			</el-table-column>
 			<el-table-column prop="platformType" label="平台类型">
 				<template #default="scope">
-					{{ scope.row.platformType === 1 ? "等保" : scope.row.platformType === 2 ? "订阅" : "--" }}
+					{{ getPlatformTypeName(scope.row)}}
 				</template>
 			</el-table-column>
 
@@ -48,7 +48,7 @@ import { Search, Plus } from "@element-plus/icons-vue";
 import { getLogListApi, deleteRoleApi } from "@/api/system/role";
 
 import useListPageHook from "@/hooks/listPage";
-
+import {allPlatInfoList} from '@/views/platformManagement/react/windows/pages/Home/store/state.js'
 import { ElMessage, ElMessageBox } from "element-plus";
 
 defineOptions({
@@ -59,6 +59,18 @@ const queryFormRaw = {
 	enabled: null,
 };
 
+const getPlatformTypeName =(row:any)=>{
+	if(row.platformType===1){
+		return '等保平台'
+	}else{
+		for(let item of allPlatInfoList){
+			if(item.platformType === row.platformType){
+				return item.name
+			}
+		}
+		return '--'
+	}
+}
 const beanInfo = {};
 
 let {

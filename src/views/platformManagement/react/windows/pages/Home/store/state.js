@@ -1,13 +1,23 @@
 import { fromJS } from 'immutable'
-let allPlatInfoList=[
-  {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
-    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
-    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
-    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
+
+let sysMenu = {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isShow:true,url:'/#/sysManagement/backgroundAccountManagement/index',isIframe:true,isBlank:false,sort:1};
+let sysMenuList =[];
+export let allPlatInfoList=[
+  {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1,platformType:5},
+    {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2,platformType:2},
+    // {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'http://172.16.1.44:821',isIframe:true,isBlank:false,sort:2,platformType:2},
+    {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3,platformType:3},
+    {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4,platformType:4},
+    // {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'http://172.16.1.44:900',isIframe:true,isBlank:false,sort:4,platformType:4},
 ]
+
 let showPlatInfoList = [];
 let UserStore = JSON.parse( localStorage.getItem('UserStore'));
+// debugger
 let menuVoList = UserStore.userInfo.menuVoList;
+if(UserStore.roleInfo[0].code==='admin'){
+  sysMenuList=[sysMenu];
+}
 for(let i =0;i<menuVoList.length;i++){
   let menuItem = menuVoList[i];
 
@@ -91,7 +101,8 @@ export default fromJS({
   isOpenMessageBox:false,//是否打开消息框
   isOpenStartBox:false,//是否打开开始菜单
   desktopApps:[ //桌面应用图标  isBlank是否在新标签页中打开
-    {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isShow:true,url:'/#/sysManagement/backgroundAccountManagement/index',isIframe:true,isBlank:false,sort:1},
+    ...sysMenuList,
+    // {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isShow:true,url:'/#/sysManagement/backgroundAccountManagement/index',isIframe:true,isBlank:false,sort:1},
     // {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2},
     // {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/file/0',isIframe:true,isBlank:false,sort:3},
     // {name:'消息管理',type:'message',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/news.png',isShow:true,url:'/win/message',isIframe:true,isBlank:false,sort:3},
