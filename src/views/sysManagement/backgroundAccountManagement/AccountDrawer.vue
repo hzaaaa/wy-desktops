@@ -82,9 +82,9 @@ const acceptParams = (params: DrawerProps) => {
 const accountFormRef = ref<FormInstance>();
 
 const accountFormRules = reactive<FormRules>({
-  nickName: [{ validator: validateNickName, trigger: "blur" }],
+  nickName: [{  required: true,validator: validateNickName, trigger: "blur" }],
   username: [{ required: true, validator: validateUsername, trigger: "blur" }],
-  phone: [{ validator: validateMobile, trigger: "blur" }],
+  phone: [{  required: true,validator: validateMobile, trigger: "blur" }],
   email: [{ validator: validateEmail, trigger: "blur" }],
   roleId: [{ required: true, message: "请选择角色！", trigger: "blur" }],
   password: [{ required: true, validator: validatePwd, trigger: "blur" }],

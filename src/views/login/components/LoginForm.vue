@@ -140,7 +140,7 @@ const onSignIn = (formEl: FormInstance | undefined) => {
        loginApi({ ...temp }).then(async (res:any) => {
         
         // 1. 存储用户信息
-        Session.set("token", res.data.token);
+        // Session.set("token", res.data.token);
         userStore.setToken(res.data.token);
         // debugger
         userStore.setUserInfo(res.data.userInfoVo);

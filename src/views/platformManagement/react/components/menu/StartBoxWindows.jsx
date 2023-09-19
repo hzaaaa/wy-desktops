@@ -5,6 +5,7 @@ import { ElMessage, ElMessageBox } from "element-plus";
 import { logoutApi } from "@/api/login";
 import { useUserStore } from "@/stores/user";
 import router from "@/routers/index";
+import Cookies from 'js-cookie';
 // const route = useRoute();
 // const router = useRouter();
 const userStore = useUserStore();
@@ -19,8 +20,10 @@ const logoutClick = () => {
       await logoutApi();
       // 2. 清除 token 等缓存
       // debugger
-      userStore.setToken("");
-      localStorage.clear();
+      userStore.$reset();
+		  localStorage.clear();
+      document.cookie='';
+      Cookies.remove('token');
       // document.cookie = "";
       // 3. 重定向到登录页,并携带当前页面地址和参数
       // debugger
