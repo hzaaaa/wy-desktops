@@ -2,10 +2,10 @@
   <div class="system-dept-dialog-container">
     <el-dialog title="修改密码" v-model="state.dialog.isShowDialog" width="440px" @closed="resetPasswordFields">
       <el-form ref="deptDialogFormRef" :model="state.ruleForm" :rules="rules" label-width="80px">
-        <el-form-item label="旧密码" class="mb20" prop="lastPassword">
+        <el-form-item label="旧密码" class="mb30" prop="lastPassword">
           <el-input v-model="state.ruleForm.lastPassword" placeholder="请填写旧密码" type="password" show-password></el-input>
         </el-form-item>
-        <el-form-item label="新密码" class="mb20" prop="newPassword">
+        <el-form-item label="新密码" class="mb30" prop="newPassword">
           <el-input
             v-model="state.ruleForm.newPassword"
             placeholder="长度须大于6位数，包含数字、字母"
@@ -13,7 +13,7 @@
             show-password
           ></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" class="mb20" prop="surePassword">
+        <el-form-item label="确认密码" class="mb30" prop="surePassword">
           <el-input v-model="state.ruleForm.surePassword" placeholder="请确认密码" type="password" show-password></el-input>
         </el-form-item>
       </el-form>
@@ -30,7 +30,7 @@
 <script setup lang="ts" name="systemDeptDialog">
 import { FormInstance, FormRules } from "element-plus";
 import { reactive, ref } from "vue";
-import { PASSWORD_PATTERN } from "@/utils/toolsValidate";
+import { validatePwd } from "@/utils/validator";
 
 // 定义子组件向父组件传值/事件
 const emit = defineEmits(["submit"]);
@@ -57,9 +57,9 @@ const validateSurePassword = (rule: any, value: string, callback: any) => {
 const rules = reactive<FormRules>({
   lastPassword: [{ required: true, message: "请填写旧密码", trigger: "blur" }],
   newPassword: [
-    { required: true, message: "请输入用户密码", trigger: "blur" },
-    { pattern: PASSWORD_PATTERN, message: "密码长度须大于6位数，包含数字、字母", trigger: "blur" },
-  ],
+		{ required: true, message: "请输入新的用户密码" },
+		{  validator: validatePwd, trigger: "blur" }
+	],
   surePassword: [
     { required: true, message: "请确认密码", trigger: "blur" },
     { validator: validateSurePassword, trigger: "blur" },
@@ -106,6 +106,9 @@ defineExpose({
 </script>
 
 <style scoped lang="scss">
+:deep(.el-form-item){
+
+}
 :deep(.el-dialog) {
   border-radius: 10px;
   .el-dialog__header {

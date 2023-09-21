@@ -161,35 +161,44 @@ export const validateEmail = (rule: any, value: any, callback: any) => {
 };
 
 // 密码
-const pwdRegExp = /^(?=.*[A-Za-z])(?=.*\d)[^]{7,}$/;
+// const pwdRegExp = /^(?=.*[A-Za-z])(?=.*\d)[^]{7,}$/;
+// export const validatePwd = (rule: any, value: any, callback: any) => {
+//   if (rule.required) {
+//     if (!value || value.length === 0) {
+//       callback(new Error("请输入密码!"));
+//     } else {
+//       // if(!projectEstablishFormRef.value) return
+//       // projectEstablishFormRef.value.validateField('projectName', ())
+//       if (!pwdRegExp.test(value)) {
+//         callback(new Error("不少于6位数，需包含数字和字母，大小写字母均可！"));
+//       } else {
+//         callback();
+//       }
+//     }
+//   } else {
+//     if (!value || value.length === 0) {
+//       callback();
+//     } else {
+//       // if(!projectEstablishFormRef.value) return
+//       // projectEstablishFormRef.value.validateField('projectName', ())
+//       if (!pwdRegExp.test(value)) {
+//         callback(new Error("不少于6位数，需包含数字和字母，大小写字母均可！"));
+//       } else {
+//         callback();
+//       }
+//     }
+//   }
+// };
+// 校检密码
 export const validatePwd = (rule: any, value: any, callback: any) => {
-  if (rule.required) {
-    if (!value || value.length === 0) {
-      callback(new Error("请输入密码!"));
-    } else {
-      // if(!projectEstablishFormRef.value) return
-      // projectEstablishFormRef.value.validateField('projectName', ())
-      if (!pwdRegExp.test(value)) {
-        callback(new Error("不少于6位数，需包含数字和字母，大小写字母均可！"));
-      } else {
-        callback();
-      }
-    }
+  if (!value || value.trim() === "") callback();
+  const reg = /.*(?=.{8,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%]).*$/;
+  if (!reg.test(value)) {
+    callback(new Error("密码最少8位，包括至少1个大写字母，1个小写字母，1个数字，!@#$%中的1个特殊字符"));
   } else {
-    if (!value || value.length === 0) {
-      callback();
-    } else {
-      // if(!projectEstablishFormRef.value) return
-      // projectEstablishFormRef.value.validateField('projectName', ())
-      if (!pwdRegExp.test(value)) {
-        callback(new Error("不少于6位数，需包含数字和字母，大小写字母均可！"));
-      } else {
-        callback();
-      }
-    }
+    callback();
   }
 };
-
 // 组织名称
 // const nickNameRegExp = /^ {0,10}$/;
 

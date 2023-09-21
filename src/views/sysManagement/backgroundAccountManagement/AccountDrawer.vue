@@ -25,8 +25,8 @@
 						<el-option v-for="item in roleList" :key="item.id" :label="item.name" :value="item.id" />
 					</el-select>
 				</el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="drawerProps.row!.password" placeholder="不少于6位，需包含数字和字母"></el-input>
+        <el-form-item label="密码" prop="password" class="mb30">
+          <el-input v-model="drawerProps.row!.password" placeholder="密码最少需要8位"></el-input>
         </el-form-item>
         <el-form-item label="启用状态" prop="enabled">
           <el-radio-group v-model="drawerProps.row!.enabled">
@@ -87,7 +87,10 @@ const accountFormRules = reactive<FormRules>({
   phone: [{  required: true,validator: validateMobile, trigger: "blur" }],
   email: [{ validator: validateEmail, trigger: "blur" }],
   roleId: [{ required: true, message: "请选择角色！", trigger: "blur" }],
-  password: [{ required: true, validator: validatePwd, trigger: "blur" }],
+  password: [
+		{ required: true, message: "请输入用户密码" },
+		{  validator: validatePwd, trigger: "blur" }
+	],
   enabled: [{ required: true, message: "请选择启用状态！", trigger: "change" }],
 });
 
