@@ -8,7 +8,7 @@
         <el-form-item label="新密码" class="mb30" prop="newPassword">
           <el-input
             v-model="state.ruleForm.newPassword"
-            placeholder="长度须大于6位数，包含数字、字母"
+            placeholder="密码最少需要8位"
             type="password"
             show-password
           ></el-input>
