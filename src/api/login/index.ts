@@ -36,3 +36,10 @@ export const getAuthButtonListApi = () => {
   return http.get<string[]>(PORTAuth + `/menu/user/permission`);
   // return Promise.resolve(AuthButtonList);
 };
+
+/**
+ * @name 获取当前用户的用户信息
+ */
+export const getAuthCurrentInfoApi = () => {
+	return http.get<any>(PORTAuth + `/user/info`);
+};

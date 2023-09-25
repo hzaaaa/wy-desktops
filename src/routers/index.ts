@@ -22,7 +22,9 @@ router.beforeEach(async (to, from, next) => {
   // 进入下一页面前，取消所有 pending 中的请求
   abortController.cancleAllPending();
   const authStore = useAuthStore();
-  const userStore = useUserStore();
+  // const userStore = useUserStore();
+  const userStore = JSON.parse(localStorage.getItem('UserStore')||'{}');
+
   
   // 1. 如果访问登录页，有 token 停留在当前页，没有 token 清空路由缓存并重定向到登录页
   if (to.path.startsWith("/login")) {
@@ -31,8 +33,9 @@ router.beforeEach(async (to, from, next) => {
     authStore.$reset();
     return next();
   }
-  
+  // debugger
   // 2. 判断是否有 token，没有则重定向到登录页
+  
   if (!userStore.token) return next({ path: "/login", replace: true });//temp test
   
   // 3. 如果没有菜单列表，重新请求菜单列表并添加动态路由（手动刷新、输入地址跳转时）

@@ -6,6 +6,7 @@ import { ElMessage } from "element-plus";
 import { isFunction } from "@/utils/is";
 import { ResultEnum } from "@/types/httpEnum";
 import abortController from "@/api/abort";
+import Cookies from 'js-cookie';
 
 const config = {
   // 默认地址请求地址，可在 .env 开头文件中修改
@@ -69,6 +70,9 @@ class RequestHttp {
         // 登录失效
         if (data.code === ResultEnum.OVERDUE||data.msg==='login expire') {
           userStore.$reset();
+          localStorage.clear();
+          document.cookie='';
+          Cookies.remove('token');
           router.replace("/login");
           ElMessage.error(data.msg);
           return Promise.reject(data);

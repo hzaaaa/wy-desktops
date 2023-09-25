@@ -3,6 +3,10 @@ import { View } from 'react-desktop'
 import { str_cut } from 'ljtools'
 import { addLogApi } from "@/api/system/role";
 
+import {
+  getUserDetailsApi
+} from "@/api/system/user";
+
 let platformTypeSet = new Set();
     // console.log(platformTypeSet)
 class DesktopApps extends Component {
@@ -17,6 +21,13 @@ class DesktopApps extends Component {
     
     let setWindowOpenListWrap = (row,openWindowList)=>{
       // debugger
+      const userStore = JSON.parse(localStorage.getItem('UserStore')||'{}');
+        if(!userStore.token){
+          location.reload()
+          return
+        }
+
+        
       console.log('row',row)
       if(row.platformType){
         if(platformTypeSet.has(row.platformType)){
@@ -28,6 +39,14 @@ class DesktopApps extends Component {
             console.log('addLogApi',res)
           })
         }
+        
+      }else{
+        // debugger
+        
+        getUserDetailsApi().then((res)=>{
+          console.log('getUserDetailsApi',res)
+          
+        })
       }
       setWindowOpenList(row,openWindowList)
     }

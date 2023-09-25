@@ -6,6 +6,10 @@
 
 <script setup >
 import {reactFn } from './react/index.jsx';
+import {
+  getUserDetailsApi
+} from "@/api/system/user";
+
 
 defineOptions({
 	name: "home",
@@ -15,9 +19,12 @@ let router = useRouter();
 
 onMounted(()=>{
 	// debugger
-	nextTick(()=>{
-		
-		reactFn();
+	getUserDetailsApi().then((res)=>{
+		console.log('getUserDetailsApi',res)
+		nextTick(()=>{
+			
+			reactFn();
+		})
 	})
 })
 

@@ -50,6 +50,7 @@ import { defineAsyncComponent, ref } from "vue";
 
 import { pwdChangeApi } from "@/api/system/user";
 import { ElMessage } from "element-plus";
+import router from "@/routers";
 
 defineOptions({
 	name: "basicInfo",
@@ -71,7 +72,10 @@ const updatePassword = (params: any) => {
   pwdChangeApi(params).then((res) => {
     if (res.code === 200) {
       ElMessage.success("修改成功");
-      passDialogRef.value.closeDialog();
+      // router.push('/login')
+      location.reload();
+      //待修改 temp test
+      // passDialogRef.value.closeDialog();
     }
   });
 };
