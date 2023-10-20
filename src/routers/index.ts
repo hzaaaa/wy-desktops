@@ -36,8 +36,17 @@ router.beforeEach(async (to, from, next) => {
   // debugger
   // 2. 判断是否有 token，没有则重定向到登录页
   
-  if (!userStore.token) return next({ path: "/login", replace: true });//temp test
-  
+  if (!userStore.token) {
+    const atIframe = window.top !== window;
+    if(atIframe){
+      // window.parent&&window.parent.postMessage('ok', "/")
+      localStorage.setItem('login','1')
+    }else{
+      return next({ path: "/login", replace: true });
+    }
+    
+  }
+
   // 3. 如果没有菜单列表，重新请求菜单列表并添加动态路由（手动刷新、输入地址跳转时）
   
   if (!authStore.authRouteListGet.length) {

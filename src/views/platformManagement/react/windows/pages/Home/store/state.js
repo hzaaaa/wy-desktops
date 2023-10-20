@@ -4,6 +4,7 @@ let sysMenu = {name:'系统管理',type:'system',logo:'/logo/sysManage.png',isSh
 let sysMenuList =[];
 export let allPlatInfoList=[
   {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1,platformType:5},
+  // {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegatedev.weiyankeji.cn',isIframe:true,isBlank:false,sort:1,platformType:5},
     {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2,platformType:2},
     // {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'http://172.16.1.44:821',isIframe:true,isBlank:false,sort:2,platformType:2},
     {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3,platformType:3},
@@ -107,10 +108,7 @@ export default fromJS({
     // {name:'文件夹',type:'filename3',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/file/file.png',isShow:true,url:'/win/file/0',isIframe:true,isBlank:false,sort:3},
     // {name:'消息管理',type:'message',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/news.png',isShow:true,url:'/win/message',isIframe:true,isBlank:false,sort:3},
     // {name:'云盘',type:'cloud',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/cloudpan.png',isShow:true,url:'http://172.16.2.56:5501/#/login',isIframe:true,isBlank:false,sort:4},
-    // {name:'订阅平台',type:'apiManage',logo:'/logo/apiManage.png',isShow:true,url:'https://wegate.weiyankeji.cn',isIframe:true,isBlank:false,sort:1},
-    // {name:'运营平台',type:'marketManage',logo:'/logo/marketManage.png',isShow:true,url:'https://market.weiyankeji.cn',isIframe:true,isBlank:false,sort:2},
-    // {name:'车险风控',type:'autoInsuranceManage',logo:'/logo/autoInsuranceManage.png',isShow:true,url:'https://weifaxian.weiyankeji.cn',isIframe:true,isBlank:false,sort:3},
-    // {name:'策略平台',type:'strategyManage',logo:'/logo/strategyManage.png',isShow:true,url:'https://rule.weiyankeji.cn',isIframe:true,isBlank:false,sort:4},
+
     ...showPlatInfoList,
     // {name:'github',type:'github',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/github.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:true,sort:5},
     // {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6},
@@ -132,7 +130,7 @@ export default fromJS({
     //   lab:'B',
     //   list:[
     //     {name:'博客', type:'qqxio', logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/qqxio.png',isShow:true,url:'https://www.qqxio.cn',isIframe:true,isBlank:false,sort:2,children:null},
-    //     {name:'捕鱼达人',type:'fish',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fish.png',isShow:true,url:'http://game.qqxio.cn/fish',isIframe:true,isBlank:false,sort:8,children:null},
+    //     
     //   ]
     // },
     // {
@@ -151,7 +149,7 @@ export default fromJS({
     //   lab:'S',
     //   list:[
     //     {name:'数据驾驶舱',type:'data_driver',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/chart.png',isShow:true,url:'https://github.com/jiajun00',isIframe:false,isBlank:false,sort:6,children:null},
-    //     {name:'水果忍者',type:'fruit_ninja',logo:'https://react-desktop.oss-cn-shenzhen.aliyuncs.com/images/logo/fruit_ninja.png',isShow:true,url:'http://game.qqxio.cn/fruit_ninja',isIframe:true,isBlank:false,sort:7,children:null},
+    //     
     //   ]
     // },
     // {

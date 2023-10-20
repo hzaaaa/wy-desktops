@@ -51,7 +51,7 @@ import { defineAsyncComponent, ref } from "vue";
 import { pwdChangeApi } from "@/api/system/user";
 import { ElMessage } from "element-plus";
 import router from "@/routers";
-
+import Cookies from 'js-cookie';
 defineOptions({
 	name: "basicInfo",
 });
@@ -73,9 +73,12 @@ const updatePassword = (params: any) => {
     if (res.code === 200) {
       ElMessage.success("修改成功");
       // router.push('/login')
-      location.reload();
-      //待修改 temp test
-      // passDialogRef.value.closeDialog();
+      userStore.$reset();
+      localStorage.clear();
+      document.cookie='';
+      Cookies.remove('token');
+      localStorage.setItem('login','1')
+      
     }
   });
 };

@@ -13,6 +13,7 @@ import {
 // const route = useRoute();
 // const router = useRouter();
 const userStore = useUserStore();
+// debugger
 // 退出登录
 const logoutClick = () => {
   ElMessageBox.confirm("确认退出吗?", "提示", {
@@ -156,7 +157,7 @@ class StartBoxWindows extends Component {
                 },openWindowList);closeStartBox()}}/>
                 {/* <div class="avatar">{ userStore?.userInfo?.sysUser?.username?.slice(0, 1).toUpperCase()}</div> */}
                 <h3>{userStore?.userInfo?.sysUser?.username}</h3>
-                <p>{userStore?.roleInfo[0]?.name}</p>
+                <p>{userStore?.userInfo?.sysRoleList?.[0]?.name}</p>
               </div>
               
               <div className="start_box_left_operating">

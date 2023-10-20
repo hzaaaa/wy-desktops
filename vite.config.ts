@@ -44,6 +44,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           // target: "http://172.16.1.44:820",
           // target: "http://172.16.1.44:8081",//zah1234  123456
           target: "http://lytest.weiyankeji.cn:18080",// liyu2 123456
+          
           rewrite: (path) => path.replace(/\/api/, ""),
         },
         

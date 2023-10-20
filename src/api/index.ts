@@ -32,8 +32,9 @@ class RequestHttp {
      */
     this.service.interceptors.request.use(
       (config: any) => {
-        const userStore = useUserStore();
+        const userStore = JSON.parse(localStorage.getItem('UserStore')||'{}');
         const token: string = userStore.token;
+        
         // debugger
         // [取消请求控制器]中添加请求
         if(!noAbortControllerUrl[config.url]){
@@ -73,8 +74,15 @@ class RequestHttp {
           localStorage.clear();
           document.cookie='';
           Cookies.remove('token');
-          router.replace("/login");
-          ElMessage.error(data.msg);
+          
+          const atIframe = window.top !== window;
+          if(atIframe){
+            // window.parent&&window.parent.postMessage('ok', "/")
+            localStorage.setItem('login','1')
+          }else{
+            router.replace("/login");
+            ElMessage.error(data.msg);
+          }
           return Promise.reject(data);
         }
         // 全局错误信息拦截

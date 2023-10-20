@@ -29,3 +29,4 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 changePrimary(DEFAULT_PRIMARY);
 changeWarning(DEFAULT_WARNING);
+
